@@ -6,7 +6,7 @@ This is a Python implementation for using OpenAI's GPT models for text completio
 
 1. Clone the repository.
 2. Install the dependencies with `pip install -r requirements.txt`.
-3. Create configuration and input file.
+3. Create configuration and input files.
 
 ## Usage
 
@@ -18,7 +18,7 @@ The `-c`, `-i`, and `-o` flags stand for the relative paths to configuration, in
 
 ## Examples
 
-Configuration, input and output file examples can be found in the project directory.
+Examples of configuration, input, and output files can be found in the project directory.
 
 - The configuration file is a YAML file with the following.
 - The input file is a markdown file with messages separated by lines starting with ```__```. The line after ```__``` should contain the role of the message (either 'system', 'user', or 'assistant'), and the lines that follow until the next line starting with ```__``` are the content of the message.
