@@ -1,4 +1,4 @@
-# AI File Completion Tool
+# AI File Processing Tool
 
 This is a Python implementation for using OpenAI's GPT models for text completion on files.
 
