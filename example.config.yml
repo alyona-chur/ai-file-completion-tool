@@ -1,0 +1,26 @@
+openai_token: ""
+model: "gpt-3.5-turbo" # Supported options: "gpt-3.5-turbo", "gpt-3.5-turbo-16k", "gpt-4"
+
+openai_completion_options:
+  temperature: 0.7
+  max_tokens: 1000
+  top_p: 1  # Always 1
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+  request_timeout: 120  # In seconds
+
+# Models Token Limits:
+#   gpt-3.5-turbo: 4096
+#   gpt-3.5-turbo-16k: 16384
+#   gpt-4: 8192
+
+# Models Prices:
+#   gpt-3.5-turbo:
+#     price_per_1000_input_tokens: 0.0015
+#     price_per_1000_output_tokens: 0.002
+#   gpt-3.5-turbo-16k:
+#     price_per_1000_input_tokens: 0.003
+#     price_per_1000_output_tokens: 0.004
+#   gpt-4:
+#     price_per_1000_input_tokens: 0.03
+#     price_per_1000_output_tokens: 0.06
