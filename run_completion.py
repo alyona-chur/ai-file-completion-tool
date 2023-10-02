@@ -71,13 +71,15 @@ def parse_input(input_path: Path) -> List[Dict[str, str]]:
     return messages
 
 
-def main(config_path: str, input_path: str, output_path: str):
+def main(config_path: str, input_path: str, output_path: str, append_output_to_input: bool = False):
     """Main function to run the script.
 
     Args:
         config_path: Path to the configuration file.
         input_path: Path to the input file.
         output_path: Path to the output file.
+        append_output_to_input: When True, appends completion result
+            to input file with __ASSISTANT keyword.
     """
     config = Configuration(ROOT_DIR / Path(config_path))
     messages = parse_input(ROOT_DIR / Path(input_path))
@@ -95,6 +97,11 @@ def main(config_path: str, input_path: str, output_path: str):
 
     with open(ROOT_DIR / Path(output_path), 'w') as file:
         file.write(result)
+
+    if append_output_to_input:
+        with open(ROOT_DIR / Path(input_path), 'a') as file:
+            file.write(f'\n__ASSISTANT\n\n{result}')
+
     print(f'Done! Model used: {config.model}. Tokens used: {token_usage}.')
 
 
@@ -119,6 +126,12 @@ if __name__ == '__main__':
         default='output.md',
         help='Relative path to the output file (default: output.md).'
     )
+    parser.add_argument(
+        '-a',
+        '--append_output_to_input',
+        action='store_true',
+        help='Append the output to the input file with "__ASSISTANT" keyword.'
+    )
 
     args = parser.parse_args()
-    main(args.config, args.input, args.output)
+    main(args.config, args.input, args.output, args.append_output_to_input)
