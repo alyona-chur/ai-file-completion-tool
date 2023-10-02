@@ -51,6 +51,8 @@ def parse_input(input_path: Path) -> List[Dict[str, str]]:
     """
     messages = []
     def append_messages(role: str, text: List[str]):
+        if text[0] == '':
+            text = text[1:]
         if text[-1] == '':
             text = text[:-1]
         messages.append({'role': role, 'content': '\n'.join(text)})
