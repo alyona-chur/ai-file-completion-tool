@@ -100,7 +100,7 @@ def main(config_path: str, input_path: str, output_path: str, append_output_to_i
 
     if append_output_to_input:
         with open(ROOT_DIR / Path(input_path), 'a') as file:
-            file.write(f'\n__ASSISTANT\n\n{result}')
+            file.write(f'\n---\n__ASSISTANT\n\n{result}\n\n---')
 
     print(f'Done! Model used: {config.model}. Tokens used: {token_usage}.')
 

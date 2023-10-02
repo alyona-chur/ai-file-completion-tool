@@ -21,7 +21,7 @@ The `-c`, `-i`, and `-o` flags stand for the relative paths to configuration, in
 Examples of configuration, input, and output files can be found in the project directory.
 
 - The **configuration file** is a YAML file with the following.
-- The **input file** is a markdown file with messages separated by lines starting with ```__```. The line after ```__``` should contain the role of the message (either 'system,' 'user,' or 'assistant') and nothing else, and the lines that follow until the next line starting with ```__``` are the content of the message. Please note that the first and last empty lines are skipped; they are included in examples for better readability.
+- The **input file** is a markdown file with messages separated by lines starting with ```__```. The text after ```__``` should contain the role of the message (either 'system,' 'user,' or 'assistant'), with no additional text. The lines that follow until the next line starting with ```__``` constitute the content of the message. Please note that the first and last empty lines or the first and last lines containing only ```---``` are skipped; they are included in examples for better readability.
 
 ```markdown
 __SYSTEM
