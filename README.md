@@ -25,6 +25,9 @@ Examples of configuration, input, and output files can be found in the project d
 
 ```markdown
 __SYSTEM
+You are a **very** helpful assistant.
+
+__ASSISTANT
 Hello! How can I assist you today?
 
 __USER
